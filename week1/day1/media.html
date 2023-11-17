@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Media Elements</title>
+</head>
+<body>
+
+    <h2>HTML5 Media Elements</h2>
+
+    <!-- Image -->
+    <img src="image.jpg" alt="Description of the image">
+
+    <br>
+
+    <!-- Audio -->
+    <audio controls>
+        <source src="audio.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <br>
+
+    <!-- Video -->
+    <video width="320" height="240" controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <br>
+
+    <!-- Figure and Figcaption -->
+    <figure>
+        <img src="image.jpg" alt="Description of the image">
+        <figcaption>Caption for the image</figcaption>
+    </figure>
+
+    <br>
+
+    <!-- Canvas -->
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000;"></canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.font = "30px Arial";
+        ctx.fillText("Hello Canvas!", 10, 50);
+    </script>
+
+    <br>
+
+    <!-- Meter -->
+    <label for="diskSpace">Disk Space:</label>
+    <meter id="diskSpace" value="60" min="0" max="100">60%</meter>
+
+    <br>
+
+    <!-- Progress -->
+    <label for="fileUpload">File Upload:</label>
+    <progress id="fileUpload" value="50" max="100">50%</progress>
+
+</body>
+</html>
