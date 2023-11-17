@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Elements</title>
+    <title>HTML5 Form Elements</title>
 </head>
 <body>
 
-    <h2>Form Elements</h2>
+    <h2>HTML5 Form Elements</h2>
 
     <!-- Text Input -->
     <label for="username">Username:</label>
@@ -15,9 +15,9 @@
 
     <br>
 
-    <!-- Password Input -->
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+    <!-- Password Input with Pattern -->
+    <label for="password">Password (at least 8 characters, one uppercase, and one digit):</label>
+    <input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" title="Must contain at least one digit and one uppercase letter, and be at least 8 characters long" required>
 
     <br>
 
@@ -28,11 +28,11 @@
     <br>
 
     <!-- Radio Buttons -->
-    <label>Gender:</label>
-    <input type="radio" id="male" name="gender" value="male">
-    <label for="male">Male</label>
-    <input type="radio" id="female" name="gender" value="female">
-    <label for="female">Female</label>
+    <fieldset>
+        <legend>Gender:</legend>
+        <label><input type="radio" name="gender" value="male"> Male</label>
+        <label><input type="radio" name="gender" value="female"> Female</label>
+    </fieldset>
 
     <br>
 
@@ -55,6 +55,30 @@
     <!-- Textarea -->
     <label for="message">Message:</label>
     <textarea id="message" name="message" placeholder="Type your message here" rows="4" cols="50"></textarea>
+
+    <br>
+
+    <!-- Date Input -->
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" id="birthdate" name="birthdate">
+
+    <br>
+
+    <!-- Number Input -->
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="10">
+
+    <br>
+
+    <!-- Range Input -->
+    <label for="brightness">Brightness:</label>
+    <input type="range" id="brightness" name="brightness" min="0" max="100">
+
+    <br>
+
+    <!-- Color Input -->
+    <label for="favcolor">Favorite Color:</label>
+    <input type="color" id="favcolor" name="favcolor">
 
     <br>
 
