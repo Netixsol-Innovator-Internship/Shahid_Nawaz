@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Consider moving styles to an external CSS file -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Day5</title>
+</head>
+
+<body>
+
+    <div class="flex flex-row items-center justify-center h-screen   bg-[#0A0C1B]">
+        <div class="max-w-screen-md mx-auto  flex flex-row flex-wrap justify-center">
+            <div class="md:hidden w-full relative">
+                <img src="./images/image-header-mobile.jpg" alt="" class="object-cover w-full rounded-t-lg  ">
+                <div class="absolute inset-0 bg-[#723E91] bg-opacity-50"></div>
+            </div>
+            <div class="md:w-1/2 p-5  rounded-b-lg" style="background-color: #1C1937; ">
+                <div class="font-bold text-center mt-10 text-3xl md:justify-center mb-5">
+                    <span class="text-white">Get</span>
+                    <span style="color: #9A67C1;">Insights
+                    </span>
+                    <span class="text-white">that help your business grow</span>
+                </div>
+                <div>
+                    <p class="mt-10 mb-10 text-gray-500 text-center">
+                        Discover the benefits of data analytics and make better decisions regarding revenue, customer,
+                        experience, and overall efficiency.
+                    </p>
+                </div>
+                <div class="flex flex-wrap md:flex-row flex-col items-center justify-center">
+                    <div class="md:m-4">
+                        <h1 id="companies" class="text-white font-bold text-2xl">0</h1>
+                        <p class="text-gray-400 text-sm">COMPANIES</p>
+                    </div>
+                    <div class="md:m-4">
+                        <h1 id="templates" class="text-white font-bold text-2xl">0</h1>
+                        <p class="text-gray-400 text-sm">TEMPLATES</p>
+                    </div>
+                    <div class="md:m-4">
+                        <h1 id="queries" class="text-white font-bold text-2xl">0</h1>
+                        <p class="text-gray-400 text-sm">QUERIES</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block md:w-1/2 relative">
+                <img src="./images/image-header-desktop.jpg" alt="" class="object-cover w-full h-full">
+                <div class="absolute inset-0 bg-[#723E91] bg-opacity-50"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to animate the number
+        function animateNumber(target, initialValue, finalValue, duration) {
+            let current = initialValue;
+            const step = (finalValue - initialValue) / duration;
+
+            const intervalId = setInterval(() => {
+                current += step;
+                document.getElementById(target).textContent = Math.floor(current);
+
+                if (current >= finalValue) {
+                    clearInterval(intervalId);
+                }
+            }, 10);
+        }
+
+        // Start the animations when the page loads
+        window.addEventListener('load', () => {
+            animateNumber('companies', 0, 1000, 100); // Animate from 0 to 10,000 in 2 seconds
+            animateNumber('templates', 0, 314, 100); // Animate from 0 to 314 in 2 seconds
+            animateNumber('queries', 0, 1200, 100); // Animate from 0 to 12,000,000 in 2 seconds
+        });
+    </script>
+</body>
+
+</html>
