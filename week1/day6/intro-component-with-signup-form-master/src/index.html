@@ -1,42 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="/dist/output.css" rel="stylesheet">
   <title>day6 task</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    body {
+      background-image: url('../images/bg-intro-desktop.png');
+      background-size: cover;
+    }
+
+    @media screen and (max-width: 600px) {
+      body {
+        background-image: url('../images/bg-intro-mobile.png');
+      }
+    }
   </style>
 </head>
-<body>
 
-  Learn to code by watching others
+<body class="bg-[#ff4040] ">
+  <div class="container flex flex-col md:flex-row justify-center items-center h-screen max-w-8xl mx-auto px-14">
+    <div class="text-white flex flex-col items-center justify-center mb-4 md:mb-0">
+      <h1 id="typewriter" class="font-bold text-4xl py ">Learn to code by <br> watching others</h1>
+      <p class="text-sm ">See how the experienced developer solves problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable</p>
+    </div>
+    <div class="text-white flex flex-col items-center justify-center">
+      <div class="bg-[#2b71a8] w-full mb-2 p-2 rounded-sm flex justify-center items-center animate-scale-up">
+        <h2 class="">Try it free for 7 days, then $30/mo, thereafter</h2>
+      </div>
 
-  See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
-  but understanding how developers think is invaluable. 
+      <form class="bg-white p-4 rounded shadow-md">
+        <input class="w-full p-2 mb-4 border border-gray-300 rounded text-slate-300 focus:bg-[#2b71a8] focus:text-white" type="text" placeholder="First Name">
+        <input class="w-full p-2 mb-4 border border-gray-300 rounded focus:bg-[#2b71a8] focus:text-white" type="text" placeholder="Last Name">
+        <input class="w-full p-2 mb-4 border border-gray-300 rounded focus:bg-[#2b71a8] focus:text-white" type="email" placeholder="Email">
+        <input class="w-full p-2 mb-4 border border-gray-300 rounded focus:bg-[#2b71a8] focus:text-white" type="password" placeholder="Password">
+        <button class="w-full p-2 bg-[#38CC8C] text-white rounded animate-pulse ">Claim for free trial</button>
+        <div class="">
+          <p class="text-[#B9B6D3] text-sm text-center font-bold">By clicking the button, you are agreeing to our  <span class="text-[#FF7A7A]">Terms and Services</span></p>
+        </div>
+      </form>
+    </div>
+  </div>
 
-  Try it free 7 days then $20/mo. thereafter
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get the text content of the element
+      var text = document.getElementById('typewriter').textContent;
+      // Set the element content to an empty string
+      document.getElementById('typewriter').textContent = '';
 
-  First Name 
-  Last Name 
-  Email Address
-  Password
+      // Function to animate the typewriter effect
+      function typeWriter(text, i) {
+        if (i < text.length) {
+          document.getElementById('typewriter').textContent += text.charAt(i);
+          i++;
+          setTimeout(function () {
+            typeWriter(text, i);
+          }, 100); // Adjust the timeout for the typing speed
+        } else {
+          // After typing is complete, start the erasing process
+          eraseText(text, text.length - 1);
+        }
+      }
 
-  Claim your free trial 
+      // Function to erase the text
+      function eraseText(text, i) {
+        if (i >= 0) {
+          document.getElementById('typewriter').textContent = text.substring(0, i);
+          i--;
+          setTimeout(function () {
+            eraseText(text, i);
+          }, 50); // Adjust the timeout for the erasing speed
+        } else {
+          // After erasing is complete, you can add a delay before typing again
+          setTimeout(function () {
+            typeWriter(text, 0);
+          }, 1000); // Adjust the delay before typing again
+        }
+      }
 
-  By clicking the button, you are agreeing to our Terms and Services
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
+      // Start the typing animation
+      typeWriter(text, 0);
+    });
+  </script>
 </body>
+
 </html>
