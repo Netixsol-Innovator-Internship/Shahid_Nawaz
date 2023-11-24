@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Frontend Mentor | Age calculator app</title>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-gray-300">
+    <div class="bg-white rounded-3xl hover:rounded-br-full w-150 p-8">
+        <div class="p-8 flex flex-col">
+            <form>
+                <div class="flex gap-8">
+                    <div class="flex flex-col justify-center items-center">
+                        <label for="day" class="uppercase font-semibold"> Day </label>
+                        <input type="number" placeholder="DD" id="day"
+                            class="w-28 p-2 rounded-lg hover:rounded-full border-gray-500 border-2 flex items-center justify-center text-4xl font-semibold">
+                        <small id="dayError" class="text-red-500"></small>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="month" class="uppercase font-semibold"> Month </label>
+                        <input type="number" placeholder="MM" id="month"
+                            class="w-28 p-2 rounded-lg hover:rounded-full border-gray-500 border-2 flex items-center justify-center text-4xl font-semibold">
+                        <small id="monthError" class="text-red-500"></small>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="year" class="uppercase font-semibold"> Year </label>
+                        <input type="number" placeholder="YYYY" id="year"
+                            class="w-28 p-2 rounded-lg hover:rounded-full border-gray-500 border-2 flex items-center justify-center text-4xl font-semibold">
+                        <small id="yearError" class="text-red-500"></small>
+                    </div>
+                </div>
+                <div class="flex items-center p-2">
+                    <hr class="w-full">
+                    <button type="submit"
+                        class="rounded-full p-2 bg-[#8550f9] border-none cursor-pointer flex items-center justify-center text-6xl">
+                        <img src="../assets/images/icon-arrow.svg" alt="icon">
+                    </button>
+                </div>
+            </form>
+            <div class="mt-8">
+                <h1 class="text-6xl font-semibold italic">
+                    <span id="YY" class="text-[#8550f9]">--</span>years
+                </h1>
+                <h1 class="text-6xl font-semibold italic">
+                    <span id="MM" class="text-[#8550f9]">--</span>months
+                </h1>
+                <h1 class="text-6xl font-semibold italic">
+                    <span id="DD" class="text-[#8550f9]">--</span>days
+                </h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript code -->
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Clear previous errors
+            document.getElementById('dayError').textContent = '';
+            document.getElementById('monthError').textContent = '';
+            document.getElementById('yearError').textContent = '';
+
+            var day = document.getElementById('day').value;
+            var month = document.getElementById('month').value;
+            var year = document.getElementById('year').value;
+
+            // Validate input values
+            if (day <= 0 || day > 30) {
+                document.getElementById('dayError').textContent = 'Day must be between 1 and 30';
+                return;
+            }
+
+            if (month <= 0 || month > 12) {
+                document.getElementById('monthError').textContent = 'Month must be between 1 and 12';
+                return;
+            }
+
+            if (year < 0 || year > 2023) {
+                document.getElementById('yearError').textContent = 'Year must be less than  2023';
+                return;
+            }
+
+            var birthDate = new Date(year, month - 1, day);
+
+            // Get the current date and time
+            var currentDate = new Date();
+
+            // Calculate age
+            var age = currentDate.getFullYear() - birthDate.getFullYear();
+
+            // Adjust age based on the month and day of birth
+            if (
+                currentDate.getMonth() < birthDate.getMonth() ||
+                (currentDate.getMonth() === birthDate.getMonth() &&
+                    currentDate.getDate() < birthDate.getDate())
+            ) {
+                age--;
+            }
+
+            // Calculate remaining months and days
+            var birthDayThisYear = new Date(currentDate.getFullYear(), birthDate.getMonth(), birthDate.getDate());
+            var ageInMilliseconds = currentDate - birthDayThisYear;
+            var ageInDays = Math.floor(ageInMilliseconds / (24 * 60 * 60 * 1000));
+
+            var remainingMonths = Math.floor(ageInDays / 30.44);
+            var remainingDays = ageInDays % 30.44;
+
+            // Display the result
+            document.getElementById('YY').textContent = age;
+            document.getElementById('MM').textContent = remainingMonths;
+            document.getElementById('DD').textContent = remainingDays;
+        });
+    </script>
+</body>
+
+</html>
