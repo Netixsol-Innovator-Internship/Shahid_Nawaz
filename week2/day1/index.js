@@ -1,3 +1,7 @@
+document.getElementById("myButton").addEventListener("click", function(){
+    console.log("My name is shahid nawaz. i have completed my graduation from COMSATS uinversity islamabad vehari campus.now i am working as intern software developer. thank you!!")
+  })
+
 alert("click on to see value of a in console")
 var a = 5;
 console.log(`valu of a is : ${a}`)
@@ -50,3 +54,5 @@ function greet(name) {
   }
   
   greet("M Masood"); // call the greet function with the argument "John"
+
+
