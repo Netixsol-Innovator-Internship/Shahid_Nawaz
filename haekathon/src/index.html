@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="/dist/output.css" rel="stylesheet">
+ <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> <!-- Include Tailwind CSS from CDN -->
+
+ <style>
+   html, body {
+     height: 100%;
+     margin: 0;
+     padding: 0;
+     font-family: Arial, sans-serif; /* Optional: Choose a font */
+   }
+
+   header {
+     padding: 10px; /* Add some padding for spacing */
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+   }
+
+   #logo {
+     display: flex;
+     align-items: center;
+   }
+
+   #logo img {
+     width: 40px; /* Adjust the width of the logo as needed */
+     margin-right: 2; /* Add some spacing between logo and title */
+   }
+
+   #navbar-title {
+     text-xl; /* Optional: Adjust the font size of the title */
+   }
+
+   #navbar-links {
+     space-x-4; /* Add spacing between navbar links */
+   }
+
+   #navbar-links a {
+     text-white; /* Set text color to white */
+   }
+
+   #home {
+     position: relative; /* Make the container for absolute positioning */
+     background-image: url('../images/HeroSection.png');
+     background-size: cover;
+     height: 100vh;
+     display: flex;
+     items-center;
+     justify-center;
+     text-white; /* Set text color to white */
+   }
+
+   #navbar {
+     position: absolute; /* Position the navbar absolutely */
+     top: 0;
+     left: 0;
+     right: 0;
+     padding: 10px; /* Adjust padding as needed */
+   }
+
+   #text-container {
+     text-align: center;
+     margin-top: 20vh; /* Adjust the margin-top as needed */
+     mx-auto; /* Center horizontally */
+   }
+
+   #biggest-sale {
+     text-lg; /* Adjust the font size as needed */
+   }
+
+   #black-friday {
+     text-xl; /* Adjust the font size as needed */
+     font-bold;
+   }
+
+   #shop-button {
+     mt-4; /* Add margin-top for spacing */
+     bg-white;
+     text-black;
+     py-2;
+     px-4;
+     rounded-full;
+     block;
+   }
+
+   h1 {
+     text-white;
+   }
+ </style>
+</head>
+<body>
+ <div id="home" class="h-screen w-full bg-cover bg-no-repeat relative">
+   <div id="navbar">
+     <header>
+       <div id="logo">
+         <img src="../images/NuraLogo.png" alt="Logo" class="w-16 h-5 mr-2"> <!-- Replace 'path/to/your/logo.png' with the actual path to your logo image -->
+       </div>
+       <div id="navbar-links" class="space-x-4">
+         <a href="#" class="text-white">Products</a>
+         <a href="#" class="text-white">Why Nura?</a>
+         <a href="#" class="text-white">Subscriptions</a>
+         <a href="#" class="text-white">Support</a>
+       </div>
+       <div id="cart" class="text-white">Card(0)</div>
+     </header>
+   </div>
+   <div class="flex flex-col items-center justify-center h-full mx-auto" id="text-container">
+     <div id="biggest-sale" class="text-lg text-white">OVER BIGGEST SALE LIVE NOW</div>
+     <div id="black-friday" class="text-xl font-bold text-white">BLACK FRIDAY STARTS NOW</div>
+     <button id="shop-button" class="mt-4 bg-white text-black py-2 px-4 rounded-full block">Shop Sale Live -></button>
+   </div>
+ </div>
+ <div class="bg-gray-900 p-6">
+  <div class="flex justify-between items-center">
+    <h2 class=" font-bold text-2xl text-white">Featured discounts</h2>
+    <a href="#" class="text-gray-500 text-green-400">VIEW ALL DISCOUNTS-></a>
+  </div>
+  <div class="flex flex-row gap-4 mt-10 pt-10 items-center justify-center flex-wrap">
+    
+    <div class="bg-gray-200 p-4 rounded-lg">
+      <img src="../images/nuraphone.png" alt="Product Image" class="w-full h-48 object-cover mb-4 hover:scale-125 duration-100">
+      <h3 class="text-black pl-10 font-bold">Product Title</h3>
+      <p class="text-black pl-8  ml-12">$788</p>
+      <button class="bg-blue-500 text-white px-4 py-2 mt-4 ml-7 pr-7 rounded-2xl">SHOP NOW -></button>
+    </div>
+    <div class="bg-gray-200 p-4 rounded-lg">
+      <img src="../images/nuraphone.png" alt="Product Image" class="w-full h-48 object-cover mb-4 hover:scale-125 duration-100">
+      <h3 class="text-black pl-10 font-bold">Product Title</h3>
+      <p class="text-black pl-8  ml-12">$788</p>
+      <button class="bg-blue-500 text-white px-4 py-2 mt-4 ml-7 pr-7 rounded-2xl">SHOP NOW -></button>
+    </div>
+    <div class="bg-gray-200 p-4 rounded-lg">
+      <img src="../images/nuraphone.png" alt="Product Image" class="w-full h-48 object-cover mb-4 hover:scale-125 duration-100">
+      <h3 class="text-black pl-10 font-bold">Product Title</h3>
+      <p class="text-black pl-8  ml-12">$788</p>
+      <button class="bg-blue-500 text-white px-4 py-2 mt-4 ml-7 pr-7 rounded-2xl">SHOP NOW -></button>
+    </div>
+    <div class="bg-gray-200 p-4 rounded-lg">
+      <img src="../images/nuraphone.png" alt="Product Image" class="w-full h-48 object-cover mb-4 hover:scale-125 duration-100">
+      <h3 class="text-black pl-10 font-bold">Product Title</h3>
+      <p class="text-black pl-8  ml-12">$788</p>
+      <button class="bg-blue-500 text-white px-4 py-2 mt-4 ml-7 pr-7 rounded-2xl">SHOP NOW -></button>
+    </div>
+  </div>
+ </div>
+ <div class="bg-blue-500 flex items-center justify-center ">
+  <img src="../images/Mobile.png" alt="Background Image" class="w-full object-cover my-2 rounded-xl">
+  <div class="text-white mt-2 ">
+    <h2 class="text-8xl ">FOR YOUR EARS ONLY</h2>
+    <p class="py-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti magni officiis, culpa quam sapiente sequi obcaecati voluptates laborum molestiae, accusamus amet. Deserunt animi eaque fugit quos quas aut maxime voluptatibus sapiente laboriosam consectetur voluptates necessitatibus dolor dolore assumenda rerum optio ratione, odit ullam iure. Quis illo non quidem, quasi cum eveniet eos porro libero maiores quisquam in dolor! Ut vero dolor dolorem facere error numquam enim, cum repudiandae, quo pariatur ducimus amet. Cumque numquam minus autem repellendus voluptatem cum ab velit voluptate ea aut quaerat ad, reiciendis quos? Quibusdam earum 
+      doloremque deserunt aliquid <span class="text-green-600">numquam, obcaecati nesciunt delectus dolor.</span> Dolore, eaque.</p>
+    <p class="py-6">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe fugiat in, itaque dolorum inventore rem ullam soluta voluptates ex amet omnis suscipit animi qui nesciunt mollitia architecto tenetur vitae modi eum, expedita voluptas. Rem velit tenetur sapiente soluta facilis quo dolore perspiciatis numquam nemo praesentium quia, veniam fugiat, quisquam sed adipisci totam delectus ab cum? Ducimus laborum, accusamus nisi consequuntur iste illum eligendi eius, nulla necessitatibus, maxime dolore fuga sed repudiandae culpa odio provident labore veniam? Fugiat, quo corporis? Modi perferendis veniam quam dolorum, reiciendis deleniti ullam qui
+       asperiores iusto numquam eaque delectus minus, eius soluta! Aut amet eius dolor.</p>
+    <button class="bg-white text-black py-2 px-4 rounded-full block">Learn More -></button>
+  </div>
+ </div>
+</body>
+</html>
