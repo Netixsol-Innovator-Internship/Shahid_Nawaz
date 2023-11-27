@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap" rel="stylesheet">
+
+  <title>Day 4 Task</title>
+
+  <style>
+    body {
+      font-family: 'Libre Franklin', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main flex flex-col h-screen justify-between">
+    <div class="wraper flex flex-col items-center my-4 ">
+      <div class="header flex flex-col items-center ">
+        <div class="logo mb-7 mt-3">
+          <img src="images/logo.svg" alt="PING" width="60">
+        </div>
+        <h1 class="md:text-3xl text-2xl  text-[#969696] font-light">We are lounching <span
+            class="text-black font-bold">soon!</span>
+        </h1>
+        <p class="my-2 text-[#969696]">Subscribe and get notified</p>
+      </div>
+      <div class="form flex md:w-[50%] lg:w-[38%]  w-[90%] flex-col sm:flex-row my-4">
+        <div class="sm:mx-2  w-[100%] text-center">
+          <input type="email" id="email"
+            class=" max-sm:my-1 max-sm:border-[#4F7DF3] border-2 py-2 px-4 sm:mx-2  rounded-full text-sm  w-[100%]"
+            placeholder="Your email address..">
+          <span class="text-red-600 text-xs hidden " id="validation_span">Invalid Email...</span>
+        </div>
+        <button
+          class="hover:bg-[#4f52f3da] max-sm:my-1 shadow-md  bg-[#4F7DF3] sm:mx-2 py-2 px-10 rounded-full text-white text-sm  max-sm:w-[100%] h-10"
+          onclick="myfun()">Notify&nbsp;Me</button>
+      </div>
+
+      <div class="image">
+        <img src="images/illustration-dashboard.png" width="" alt="image" class=" sm:w-[500px] w-[300px] my-6 ">
+      </div>
+    </div>
+    <div class="footer">
+      <div class="links flex justify-center space-x-4">
+        <div
+          class="group border-[1px] border-[#969696] hover:border-[#4F7DF3] hover:bg-[#4F7DF3]  rounded-full flex justify-center items-center w-8 h-8 ">
+          <a href="" class=" m-1"><i class="text-[#4F7DF3] group-hover:text-[#fff] fa-brands fa-facebook-f"></i></a>
+        </div>
+        <div
+          class="group border-[1px] border-[#969696] hover:border-[#4F7DF3] hover:bg-[#4F7DF3]  rounded-full flex justify-center items-center w-8 h-8 ">
+          <a href="" class=" m-1"><i class="text-[#4F7DF3] group-hover:text-[#fff] fa-brands fa-twitter"></i></a>
+        </div>
+        <div
+          class="group border-[1px] border-[#969696] hover:border-[#4F7DF3] hover:bg-[#4F7DF3]  rounded-full flex justify-center items-center w-8 h-8 ">
+          <a href="" class=" m-1"><i class="text-[#4F7DF3] group-hover:text-[#fff] fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="Copyright flex justify-center items-center text-[#969696] font-light">
+        <i class=" font-light fa-regular fa-copyright text-xs"></i>
+        <p class="my-2 mx-1">Copyright Ping. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/f8db7d9584.js" crossorigin="anonymous"></script>
+</body>
+
+<script>
+
+  function isValidEmail(email) {
+    // Regular expression for a simple email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Test the input against the regular expression
+    return emailRegex.test(email);
+  }
+
+  function myfun() {
+    var userInput = document.getElementById('email').value;
+    if (isValidEmail(userInput)) {
+      document.getElementById('validation_span').classList.add("hidden");
+      document.getElementById('email').classList.remove("border-red-600");
+    } else {
+      document.getElementById('validation_span').classList.remove("hidden");
+      document.getElementById('email').classList.add("border-red-600");
+
+    }
+
+  }
+
+</script>
+
+</html>

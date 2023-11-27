@@ -77,7 +77,7 @@ const notifications=[
 const wrapper = document.getElementById('shows')
 function showNotification(){
     wrapper.innerHTML=notifications.map((item)=> {
-        return `<div class="flex flex-row  items-center p-5 rounded-xl space-x-3 ">
+        return `<div class="flex flex-row  items-center p-5 rounded-xl space-x-3  bg-[#f6fafd]">
        
         <div class="">
           <img src=${item.profilePic} alt="">
@@ -91,7 +91,7 @@ function showNotification(){
           <span class="text-gray-400">1m ago</span>
           ${item.msg?`<p class=" border border-gray-300 p-3 rounded-lg">${item.msg}</p>`:""}
         </div>
-          ${item.img2?`<img src=${item.img2} class="p-5" alt="">`:""}
+          ${item.img2?`<img src=${item.img2} class="p-3" alt="">`:""}
       </div>`
     })
 }

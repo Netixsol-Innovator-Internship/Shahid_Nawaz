@@ -1,0 +1,97 @@
+body{
+    
+    background-color: salmon;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main{
+  height: auto;
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+}
+
+
+.main .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin: 0px 20px 0px 20px;
+}
+
+.main button{
+    padding: 0.5rem;
+    margin: 5px;
+    background-color: rgba(0, 0, 0, 0.123);
+    border-radius: 5px;
+    color: #fff;
+    border: 0;
+}
+
+.main_card{
+    border-radius: 10px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 10px solid rgb(0, 0, 0);
+    border-bottom: 40px solid black;
+    max-width: 500px;
+}
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #F0C845;
+    color: rgba(0, 0, 0, 0.623);
+    padding: 10px 0px 10px 0px;
+}
+
+
+.footer {
+    display: flex;
+    background-color: #F0C845;
+
+}
+
+.footer .footer_links{
+     flex: 1 1 25%;
+     border-left: 1px solid #f5d97f;
+
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     text-align: center;
+
+     padding: 10px 0px 10px 0px;
+}
+
+.footer_links a { 
+    color: #fff;
+    font-size: 15px;
+
+}
+
+.body{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+
+
+
+.image_div{
+    display: flex;
+}
+
+.image_div div{
+    padding-left: 5px;
+}
