@@ -91,9 +91,7 @@ function showNotification(){
           <span class="text-gray-400">1m ago</span>
           ${item.msg?`<p class=" border border-gray-300 p-3 rounded-lg">${item.msg}</p>`:""}
         </div>
-
           ${item.img2?`<img src=${item.img2} class="p-5" alt="">`:""}
-
       </div>`
     })
 }
