@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-red-100 flex item-center justify-center mt-24">
+    
+        <div class="h-screen   ">
+            <h1 class="text-3xl font-bold bg-slate-300 p-10">
+                <%=today%>
+              </h1>
+              <div class="mt-5 bg-gray-200 p-10">
+                <ul>
+                   <% for(i=0; i < newItemList.length; i++){ %>
+                    <li class="flex flex-row justify-between font-bold text-2xl w-full"> 
+
+                       <p><%=  newItemList[i] %></p>
+                       <div class="flex flex-row">
+                        <button type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                          <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                          Delete
+                          </span>
+                          </button>
+                          <button type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                            Update
+                            </span>
+                            </button>
+                       </div>
+                    </li>
+                  
+                <%}%>
+                    <form action="/" method="post" class="mt-5">
+                        <input type="text" class="px-5 py-2.5 rounded-lg " name="newItem" autocomplete="off">
+                        <button type="submit" class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                            Add Item
+                            </span>
+                            </button>
+                    </form>
+                </ul>
+              </div>
+        </div>
+    
+ 
+</body>
+</html>
