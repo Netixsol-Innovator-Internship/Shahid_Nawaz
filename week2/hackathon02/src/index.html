@@ -41,9 +41,7 @@
       bottom: 0;
       padding-left: 20px;
       color: white;
-      
       font-size: 16px;
-      
     }
 
     .enlarged {
@@ -76,21 +74,27 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const gridItems = document.querySelectorAll('.grid-item');
+  document.addEventListener('DOMContentLoaded', function () {
+    const gridItems = document.querySelectorAll('.grid-item');
 
-      gridItems.forEach(item => {
-        item.addEventListener('click', function () {
-          // Reset all items to their original size
-          gridItems.forEach(otherItem => {
-            otherItem.classList.remove('enlarged');
-          });
+    gridItems.forEach(item => {
+      item.addEventListener('click', function () {
+        // Check if the clicked item is already enlarged
+        const isEnlarged = this.classList.contains('enlarged');
 
+        // Reset all items to their original size
+        gridItems.forEach(otherItem => {
+          otherItem.classList.remove('enlarged');
+        });
+
+        if (!isEnlarged) {
           // Enlarge the clicked item
           this.classList.add('enlarged');
-        });
+        }
       });
     });
-  </script>
+  });
+</script>
+
 </body>
 </html>
