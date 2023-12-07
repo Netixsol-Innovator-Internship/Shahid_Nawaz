@@ -17,10 +17,25 @@ app.set('view engine', 'ejs');
     let day=today.toLocaleDateString("en-US", options)
     res.render("index",{today:day , newItemList:items})
 })
+// ... (your existing code)
+
+app.delete('/delete/:index', (req, res) => {
+    const index = req.params.index;
+    if (index >= 0 && index < items.length) {
+        items.splice(index, 1);
+        res.json({ success: true });
+    } else {
+        res.json({ success: false });
+    }
+});
+
+// ... (your existing code)
+
 app.post("/",(req, res)=>{
    let item=req.body.newItem
    items.push(item)
     res.redirect("/")
-
 })
+
+
  app.listen(3000,()=>{console.log("app is listen")})
