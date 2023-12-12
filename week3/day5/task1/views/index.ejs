@@ -46,7 +46,7 @@
   <body class="bg-red-100 flex items-center justify-center mt-24">
     <div class="h-screen">
       <h1
-        data-text="SUNDAY, DECEMBER 10, 2023"
+        data-text="<%= today %>"
         class="fill text-3xl font-bold bg-slate-300 p-10 rounded-lg"
       >
         <%= today %>
@@ -164,7 +164,7 @@
         addBtn.style.padding = "10px";
 
         addBtn.addEventListener("click", function () {
-          console.log('index', index);
+          console.log("index", index);
           console.log("input", inputField.value);
           // Send an AJAX request to your server to delete the item
           fetch(`/edit/${index}`, {
